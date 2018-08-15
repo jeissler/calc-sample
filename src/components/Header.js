@@ -1,4 +1,4 @@
-import logo from "../img/logo.svg";
+import logo from "../img/chart.svg";
 import React from "react";
 
 // stateless components are just functions
