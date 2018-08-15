@@ -1,26 +1,21 @@
 import React, {Component} from 'react';
-import Header from './components/Header.js'
-import './App.css';
+import Header from './components/Header';
+import Intro from './components/Intro';
+import Footer from './components/Footer';
+import './css/App.css';
 
 class App extends Component {
     render() {
-        const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-            month = months[new Date().getMonth() + 1] + '.';
-
         return (
             <div className="frame-wrapper">
 
-                <Header month={month}/>
+                <Header/>
 
                 <main>
-                    <p className="intro">
-                        We're just getting this started.
-                    </p>
+                    <Intro/>
                 </main>
 
-                <footer>
-
-                </footer>
+                <Footer/>
 
             </div>
         );
