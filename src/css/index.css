@@ -23,4 +23,5 @@ body:before {
 
 main {
     min-height: 75vh;
+    padding: 0 20px;
 }
