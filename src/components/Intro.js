@@ -7,9 +7,9 @@ const Intro = () => {
                 Get an honest look at your financial future and find out how to make the most of your assets.
             </p>
 
-            <button>
+            {/*<button>
                 Show Me How
-            </button>
+            </button>*/}
         </section>
     )
 };
