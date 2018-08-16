@@ -61,6 +61,7 @@ class LifeCalculator extends Component {
                 </p>
 
                 <form className='life-calc__form'>
+                    {/* age grid */}
                     <div className='life-calc__age'>
                         <FormInput
                             label='Current Age'
@@ -74,10 +75,34 @@ class LifeCalculator extends Component {
                             value={this.state.age_retire}
                             onInput={this.handleInput} />
                     </div>
+
+                    {/* input slider expenses 500 range */}
+
+                    {/* rent/own grid */}
+                    <div className="life-calc__home">
+                        {/* TODO: checkbox for own/rent + add to calc */}
+                        <FormInput
+                            label='Monthly Rent/Mortgage'
+                            name='mo_home'
+                            value={this.state.mo_home}
+                            onInput={this.handleInput} />
+                    </div>
+
+                    {/* input slider income 20k range */}
+
+                    <FormInput
+                        label='Retirement Account'
+                        name='life_savings'
+                        value={this.state.life_savings}
+                        onInput={this.handleInput} />
                 </form>
 
                 <aside className='life-calc__results'>
-                    {total} years to retirement
+                    {retire_yrs} years to retirement
+                    <br/>
+                    {life_total} total needed
+                    <br/>
+                    {life_savings} total saved
                 </aside>
             </section>
         )

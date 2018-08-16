@@ -24,4 +24,15 @@
     padding: 10px;
 }
 
+/* forms */
+form label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+form label span {
+    display: block;
+    margin-bottom: 5px;
+}
+
 /* TODO: split out css per component and group together */
