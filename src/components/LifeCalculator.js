@@ -7,9 +7,13 @@ class LifeCalculator extends Component {
         this.state = {
             age: 23,
             age_retire: 65,
-            expenses: 500,
-            mortgage: 1400,
-            income: 85000
+            mo_expenses: 500,
+            mo_home: 1400,
+            own_rent: 1,
+            own_yrs: 27,
+            yr_income: 85000,
+            yr_savings: 5000,
+            life_savings: 20000
         };
 
         this.handleInput = this.handleInput.bind(this)
@@ -19,15 +23,36 @@ class LifeCalculator extends Component {
         const target = event.target,
             name = target.name;
 
-        this.setState({[name]: target.value})
+        this.setState({[name]: parseInt(target.value)});
+
+        this.calculateAmount();
     }
 
     calculateAmount() {
-        return this.state.age_retire - this.state.age;
+        const num_config = {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        };
+
+        const retire_yrs = this.state.age_retire - this.state.age,
+            inflate = (this.state.yr_income / retire_yrs),
+            own_home = this.state.own_rent = 1,
+            life_home = own_home ? this.state.own_yrs * this.state.mo_home : retire_yrs * this.state.mo_home,
+            life_expenses = (this.state.mo_expenses * 12 + inflate) * (retire_yrs + 20),
+            life_total = life_home + life_expenses - this.state.life_savings,
+            life_savings = this.state.yr_savings * retire_yrs + this.state.life_savings;
+
+        return {
+            retire_yrs: retire_yrs,
+            life_total: life_total.toLocaleString('en', num_config),
+            life_savings: life_savings.toLocaleString('en', num_config)
+        };
     }
 
     render() {
-        const total = this.calculateAmount();
+        const {retire_yrs, life_total, life_savings} = this.calculateAmount();
 
         return (
             <section className='life-calc'>
