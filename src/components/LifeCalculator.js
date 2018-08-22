@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import FormInput from './FormInput';
+import React, {Component} from "react";
+import FormInput from "./FormInput";
+import "../css/Forms.css"
 
 class LifeCalculator extends Component {
     constructor(props) {
@@ -55,49 +56,59 @@ class LifeCalculator extends Component {
         const {retire_yrs, life_total, life_savings} = this.calculateAmount();
 
         return (
-            <section className='life-calc'>
-                <p className='life-calc__intro'>
+            <section className="life-calc">
+                <p className="life-calc__intro">
                     Knowing what you realistically need to retire comfortably is half the battle.
                 </p>
 
-                <form className='life-calc__form'>
+                <form className="life-calc__form">
                     {/* age grid */}
-                    <div className='life-calc__age'>
-                        <FormInput
-                            label='Current Age'
-                            name='age'
-                            value={this.state.age}
-                            onInput={this.handleInput} />
+                    <div className="life-calc__age">
+                        <FormInput label='Current Age'
+                                   name='age'
+                                   type='number'
+                                   value={this.state.age}
+                                   onInput={this.handleInput}/>
 
-                        <FormInput
-                            label='Retriement Age'
-                            name='age_retire'
-                            value={this.state.age_retire}
-                            onInput={this.handleInput} />
+                        <FormInput label='Retriement Age'
+                                   name='age_retire'
+                                   type='number'
+                                   value={this.state.age_retire}
+                                   onInput={this.handleInput}/>
                     </div>
 
-                    {/* input slider expenses 500 range */}
+                    <FormInput label='Monthly Expenses'
+                               type='range'
+                               name='mo_expenses'
+                               value={this.state.mo_expenses}
+                               max='2000'
+                               onInput={this.handleInput}/>
 
                     {/* rent/own grid */}
                     <div className="life-calc__home">
                         {/* TODO: checkbox for own/rent + add to calc */}
-                        <FormInput
-                            label='Monthly Rent/Mortgage'
-                            name='mo_home'
-                            value={this.state.mo_home}
-                            onInput={this.handleInput} />
+                        <FormInput label='Monthly Rent/Mortgage'
+                                   name='mo_home'
+                                   type='number'
+                                   value={this.state.mo_home}
+                                   onInput={this.handleInput}/>
                     </div>
 
-                    {/* input slider income 20k range */}
+                    <FormInput label='Yearly Income'
+                               type='range'
+                               name='yr_income'
+                               value={this.state.yr_income}
+                               max='300000'
+                               onInput={this.handleInput}/>
 
-                    <FormInput
-                        label='Retirement Account'
-                        name='life_savings'
-                        value={this.state.life_savings}
-                        onInput={this.handleInput} />
+                    <FormInput label='Retirement Account'
+                               name='life_savings'
+                               type='number'
+                               value={this.state.life_savings}
+                               onInput={this.handleInput}/>
                 </form>
 
-                <aside className='life-calc__results'>
+                <aside className="life-calc__results">
                     {retire_yrs} years to retirement
                     <br/>
                     {life_total} total needed

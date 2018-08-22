@@ -11,6 +11,12 @@ input {
     width: 100%;
 }
 
+input[type=number],
+input[type=text] {
+    height: 25px;
+    font-size: 1rem;
+}
+
 /* range sliders - range.css*/
 input[type=range] {
     -webkit-appearance: none;

@@ -7,9 +7,11 @@ class FormInput extends Component {
                 <span>{this.props.label}</span>
                 <input
                     name={this.props.name}
-                    type='number'
+                    type={this.props.type}
+                    min={this.props.min}
+                    max={this.props.max}
                     value={this.props.value}
-                    onInput={this.props.onInput} />
+                    onChange={this.props.onInput} />
             </label>
         )
     }
