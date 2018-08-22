@@ -1,38 +1,46 @@
-.frame-wrapper {
+.frame-wrapper { }
 
+.header,
+.footer {
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .header {
-    padding-top: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+.header__logo { margin-right: 5px; }
+.header__co { }
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+.hero {
+    padding-top: 50px;
     text-align: center;
 }
-
-.header__logo {
-    width: 40px;
-}
-
-.header__title {
-    margin-top: 0;
-}
+.hero__img { width: 40px; }
+.hero__title { margin-top: 0; }
 
 .intro {
     max-width: 500px;
     margin: 0 auto 40px;
 }
 
-.app-footer {
-    padding: 10px;
-}
 
 /* forms */
 form label {
     display: block;
     margin-bottom: 20px;
 }
-
 form label span {
     display: block;
     margin-bottom: 5px;
 }
-
-/* TODO: split out css per component and group together */
