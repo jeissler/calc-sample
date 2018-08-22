@@ -23,7 +23,7 @@ class LifeCalculator extends Component {
         const target = event.target,
             name = target.name;
 
-        this.setState({[name]: parseInt(target.value)});
+        this.setState({[name]: parseInt(target.value, 10)});
 
         this.calculateAmount();
     }
@@ -38,7 +38,7 @@ class LifeCalculator extends Component {
 
         const retire_yrs = this.state.age_retire - this.state.age,
             inflate = (this.state.yr_income / retire_yrs),
-            own_home = this.state.own_rent = 1,
+            own_home = this.state.own_rent === 1,
             life_home = own_home ? this.state.own_yrs * this.state.mo_home : retire_yrs * this.state.mo_home,
             life_expenses = (this.state.mo_expenses * 12 + inflate) * (retire_yrs + 20),
             life_total = life_home + life_expenses - this.state.life_savings,
