@@ -18,7 +18,7 @@
 
 .footer {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     justify-content: flex-end;
 }
 
@@ -32,15 +32,4 @@
 .intro {
     max-width: 500px;
     margin: 0 auto 40px;
-}
-
-
-/* forms */
-form label {
-    display: block;
-    margin-bottom: 20px;
-}
-form label span {
-    display: block;
-    margin-bottom: 5px;
 }
