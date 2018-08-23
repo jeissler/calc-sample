@@ -27,6 +27,7 @@ class LifeCalculator extends Component {
         this.setState({[name]: parseInt(target.value, 10)});
 
         this.calculateAmount();
+        this.getRangeValues();
     }
 
     calculateAmount() {
@@ -52,8 +53,16 @@ class LifeCalculator extends Component {
         };
     }
 
+    getRangeValues() {
+        return {
+            retire_min: this.state.age + 10 <= 65 ? this.state.age + 10 : this.state.age,
+            retire_max: this.state.age >= 65 ? this.state.age + 10 : 75
+        }
+    }
+
     render() {
-        const {retire_yrs, life_total, life_savings} = this.calculateAmount();
+        const {retire_yrs, life_total, life_savings} = this.calculateAmount(),
+            {retire_min, retire_max} = this.getRangeValues();
 
         return (
             <section className="life-calc">
@@ -72,32 +81,36 @@ class LifeCalculator extends Component {
 
                         <FormInput label='Retriement Age'
                                    name='age_retire'
-                                   type='number'
+                                   type='range'
+                                   min={retire_min}
+                                   max={retire_max}
                                    value={this.state.age_retire}
                                    onInput={this.handleInput}/>
                     </div>
 
-                    <FormInput label='Monthly Expenses'
-                               type='range'
-                               name='mo_expenses'
-                               value={this.state.mo_expenses}
-                               max='2000'
-                               onInput={this.handleInput}/>
 
-                    {/* rent/own grid */}
-                    <div className="life-calc__home">
-                        {/* TODO: checkbox for own/rent + add to calc */}
+                    <div className="life-calc__expenses">
                         <FormInput label='Monthly Rent/Mortgage'
                                    name='mo_home'
                                    type='number'
                                    value={this.state.mo_home}
                                    onInput={this.handleInput}/>
+
+                        <FormInput label='Monthly Expenses'
+                                   type='number'
+                                   name='mo_expenses'
+                                   value={this.state.mo_expenses}
+                                   onInput={this.handleInput}/>
+
+                        {/* TODO: checkbox for own/rent + reveal payoff yrs */}
                     </div>
+
 
                     <FormInput label='Yearly Income'
                                type='range'
                                name='yr_income'
                                value={this.state.yr_income}
+                               min='30000'
                                max='300000'
                                onInput={this.handleInput}/>
 
