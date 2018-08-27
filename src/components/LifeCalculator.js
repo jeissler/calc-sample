@@ -131,11 +131,11 @@ class LifeCalculator extends Component {
                 </form>
 
                 <aside className="life-calc__results">
-                    {retire_yrs} years to retirement
-                    <br/>
-                    {life_total} total needed
-                    <br/>
-                    {life_savings} total saved
+                    <Results
+                        is_valid={is_valid}
+                        life_total={life_total}
+                        life_savings={life_savings}
+                        retire_yrs={retire_yrs} />
                 </aside>
             </section>
         )
