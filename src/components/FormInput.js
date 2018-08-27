@@ -4,6 +4,7 @@ class FormInput extends Component {
     render() {
         return(
             <label>
+                {/* TODO: range min/max labels */}
                 <span>{this.props.label}</span>
                 <input
                     name={this.props.name}

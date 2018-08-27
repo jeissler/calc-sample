@@ -13,7 +13,7 @@ class LifeCalculator extends Component {
             own_rent: 1,
             own_yrs: 27,
             yr_income: 85000,
-            yr_savings: 5000,
+            yr_savings: 5,
             life_savings: 20000
         };
 
@@ -44,7 +44,8 @@ class LifeCalculator extends Component {
             life_home = own_home ? this.state.own_yrs * this.state.mo_home : retire_yrs * this.state.mo_home,
             life_expenses = (this.state.mo_expenses * 12 + inflate) * (retire_yrs + 20),
             life_total = life_home + life_expenses - this.state.life_savings,
-            life_savings = this.state.yr_savings * retire_yrs + this.state.life_savings;
+            yr_savings = (this.state.yr_savings / 100) * this.state.yr_income,
+            life_savings = yr_savings * retire_yrs + this.state.life_savings;
 
         return {
             retire_yrs: retire_yrs,
@@ -72,24 +73,24 @@ class LifeCalculator extends Component {
 
                 <form className="life-calc__form">
                     {/* age grid */}
-                    <div className="life-calc__age">
+                    <legend className="life-calc__age">
                         <FormInput label='Current Age'
                                    name='age'
                                    type='number'
                                    value={this.state.age}
                                    onInput={this.handleInput}/>
 
-                        <FormInput label='Retriement Age'
+                        <FormInput label={`Retriement Age ${this.state.age_retire}`}
                                    name='age_retire'
                                    type='range'
                                    min={retire_min}
                                    max={retire_max}
                                    value={this.state.age_retire}
                                    onInput={this.handleInput}/>
-                    </div>
+                    </legend>
 
 
-                    <div className="life-calc__expenses">
+                    <legend className="life-calc__expenses">
                         <FormInput label='Monthly Rent/Mortgage'
                                    name='mo_home'
                                    type='number'
@@ -103,22 +104,30 @@ class LifeCalculator extends Component {
                                    onInput={this.handleInput}/>
 
                         {/* TODO: checkbox for own/rent + reveal payoff yrs */}
-                    </div>
+                    </legend>
 
 
-                    <FormInput label='Yearly Income'
-                               type='range'
-                               name='yr_income'
-                               value={this.state.yr_income}
-                               min='30000'
-                               max='300000'
-                               onInput={this.handleInput}/>
+                    <legend className="life-calc__savings">
+                        <FormInput label='Yearly Income'
+                                   type='number'
+                                   name='yr_income'
+                                   value={this.state.yr_income}
+                                   onInput={this.handleInput}/>
 
-                    <FormInput label='Retirement Account'
-                               name='life_savings'
-                               type='number'
-                               value={this.state.life_savings}
-                               onInput={this.handleInput}/>
+                        <FormInput label='Retirement Account'
+                                   name='life_savings'
+                                   type='number'
+                                   value={this.state.life_savings}
+                                   onInput={this.handleInput}/>
+
+                        <FormInput label={`Yearly Savings ${this.state.yr_savings}%`}
+                                   type='range'
+                                   name='yr_savings'
+                                   value={this.state.yr_savings}
+                                   min='0'
+                                   max='35'
+                                   onInput={this.handleInput}/>
+                    </legend>
                 </form>
 
                 <aside className="life-calc__results">
