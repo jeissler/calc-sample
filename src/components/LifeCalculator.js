@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import FormInput from "./FormInput";
+import Results from "./Results";
 import "../css/Forms.css"
 
 class LifeCalculator extends Component {
@@ -45,9 +46,11 @@ class LifeCalculator extends Component {
             life_expenses = (this.state.mo_expenses * 12 + inflate) * (retire_yrs + 20),
             life_total = life_home + life_expenses - this.state.life_savings,
             yr_savings = (this.state.yr_savings / 100) * this.state.yr_income,
-            life_savings = yr_savings * retire_yrs + this.state.life_savings;
+            life_savings = yr_savings * retire_yrs + this.state.life_savings,
+            is_valid = [retire_yrs, life_total, life_savings].every(prop => !isNaN(prop) && prop > 0);
 
         return {
+            is_valid: is_valid,
             retire_yrs: retire_yrs,
             life_total: life_total.toLocaleString('en', num_config),
             life_savings: life_savings.toLocaleString('en', num_config)
@@ -62,7 +65,7 @@ class LifeCalculator extends Component {
     }
 
     render() {
-        const {retire_yrs, life_total, life_savings} = this.calculateAmount(),
+        const {is_valid, retire_yrs, life_total, life_savings} = this.calculateAmount(),
             {retire_min, retire_max} = this.getRangeValues();
 
         return (
@@ -78,6 +81,9 @@ class LifeCalculator extends Component {
                                    name='age'
                                    type='number'
                                    value={this.state.age}
+                                   min={18}
+                                   max={99}
+                                   err_msg='Please enter a valid age'
                                    onInput={this.handleInput}/>
 
                         <FormInput label={`Retriement Age ${this.state.age_retire}`}
@@ -111,6 +117,7 @@ class LifeCalculator extends Component {
                         <FormInput label='Yearly Income'
                                    type='number'
                                    name='yr_income'
+                                   min={0}
                                    value={this.state.yr_income}
                                    onInput={this.handleInput}/>
 
@@ -118,6 +125,7 @@ class LifeCalculator extends Component {
                                    name='life_savings'
                                    type='number'
                                    value={this.state.life_savings}
+                                   max={1000000}
                                    onInput={this.handleInput}/>
 
                         <FormInput label={`Yearly Savings ${this.state.yr_savings}%`}
