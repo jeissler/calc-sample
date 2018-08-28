@@ -3,22 +3,23 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: var(--font-family);
     //background: url('../img/bg2.jpg') no-repeat 100% 0%;
     background-size: cover;
     position: relative;
-}
+    color: var(--body-color);
 
-body:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    //background: rgba(255, 255, 255, .5);
-    z-index: -1;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: purple;
+        z-index: -1;
+    }
 }
 
 main {
