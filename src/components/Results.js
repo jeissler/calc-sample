@@ -1,21 +1,21 @@
-import React from "react";
+import React, {Fragment} from "react";
 
 const Results = (props) => {
     if(!props.is_valid)
         return (
-            <React.Fragment>
+            <Fragment>
                 Oh no, we've reached an error state!
-            </React.Fragment>
+            </Fragment>
         );
 
     return (
-        <React.Fragment>
+        <Fragment>
             {props.retire_yrs} years to retirement
             <br/>
             {props.life_total} total needed
             <br/>
             {props.life_savings} total saved
-        </React.Fragment>
+        </Fragment>
     )
 };
 
