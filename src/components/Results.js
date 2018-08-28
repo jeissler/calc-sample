@@ -1,13 +1,10 @@
 import React, {Fragment} from "react";
 
-const Results = (props) => {
-    if(!props.is_valid)
-        return (
-            <Fragment>
-                Oh no, we've reached an error state!
-            </Fragment>
-        );
+const Error = () => {
+    return "Oh no, we've reached an error state!"
+};
 
+const Result = (props) => {
     return (
         <Fragment>
             {props.retire_yrs} years to retirement
@@ -17,6 +14,10 @@ const Results = (props) => {
             {props.life_savings} total saved
         </Fragment>
     )
+};
+
+const Results = (props) => {
+    return props.is_valid ? <Result {...props}/> : <Error/>
 };
 
 export default Results
