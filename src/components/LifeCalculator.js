@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import FormInput from "./FormInput";
 import Results from "./Results";
+
 import "../css/Forms.css"
 
 class LifeCalculator extends Component {
@@ -77,64 +78,74 @@ class LifeCalculator extends Component {
                 <form className="life-calc__form">
                     {/* age grid */}
                     <fieldset className="life-calc__age">
-                        <FormInput label='Current Age'
-                                   name='age'
-                                   type='number'
-                                   value={this.state.age}
-                                   min={18}
-                                   max={99}
-                                   err_msg='Please enter a valid age'
-                                   onInput={this.handleInput}/>
+                        <div>
+                            <FormInput label='Current Age'
+                                       name='age'
+                                       type='number'
+                                       value={this.state.age}
+                                       min={18}
+                                       max={99}
+                                       err_msg='Please enter a valid age'
+                                       onInput={this.handleInput}/>
 
-                        <FormInput label={`Retriement Age ${this.state.age_retire}`}
-                                   name='age_retire'
-                                   type='range'
-                                   min={retire_min}
-                                   max={retire_max}
-                                   value={this.state.age_retire}
-                                   onInput={this.handleInput}/>
+                            <FormInput label={`Retriement Age ${this.state.age_retire}`}
+                                       name='age_retire'
+                                       type='range'
+                                       min={retire_min}
+                                       max={retire_max}
+                                       value={this.state.age_retire}
+                                       onInput={this.handleInput}/>
+                        </div>
                     </fieldset>
 
 
                     <fieldset className="life-calc__expenses">
-                        <FormInput label='Monthly Rent/Mortgage'
-                                   name='mo_home'
-                                   type='number'
-                                   value={this.state.mo_home}
-                                   onInput={this.handleInput}/>
+                        <div>
+                            <FormInput label='Monthly Rent/Mortgage'
+                                       name='mo_home'
+                                       type='number'
+                                       currency={true}
+                                       value={this.state.mo_home}
+                                       onInput={this.handleInput}/>
 
-                        <FormInput label='Monthly Expenses'
-                                   type='number'
-                                   name='mo_expenses'
-                                   value={this.state.mo_expenses}
-                                   onInput={this.handleInput}/>
+                            <FormInput label='Monthly Expenses'
+                                       type='number'
+                                       currency={true}
+                                       name='mo_expenses'
+                                       value={this.state.mo_expenses}
+                                       onInput={this.handleInput}/>
+                        </div>
 
                         {/* TODO: checkbox for own/rent + reveal payoff yrs */}
                     </fieldset>
 
 
                     <fieldset className="life-calc__savings">
-                        <FormInput label='Yearly Income'
-                                   type='number'
-                                   name='yr_income'
-                                   min={0}
-                                   value={this.state.yr_income}
-                                   onInput={this.handleInput}/>
+                        <div>
+                            <FormInput label='Yearly Income'
+                                       name='yr_income'
+                                       type='number'
+                                       currency={true}
+                                       min={0}
+                                       value={this.state.yr_income}
+                                       onInput={this.handleInput}/>
 
-                        <FormInput label='Retirement Account'
-                                   name='life_savings'
-                                   type='number'
-                                   value={this.state.life_savings}
-                                   max={1000000}
-                                   onInput={this.handleInput}/>
+                            <FormInput label='Retirement Account'
+                                       name='life_savings'
+                                       type='number'
+                                       currency={true}
+                                       value={this.state.life_savings}
+                                       max={1000000}
+                                       onInput={this.handleInput}/>
 
-                        <FormInput label={`Yearly Savings ${this.state.yr_savings}%`}
-                                   type='range'
-                                   name='yr_savings'
-                                   value={this.state.yr_savings}
-                                   min='0'
-                                   max='35'
-                                   onInput={this.handleInput}/>
+                            <FormInput label={`Yearly Savings ${this.state.yr_savings}%`}
+                                       type='range'
+                                       name='yr_savings'
+                                       value={this.state.yr_savings}
+                                       min='0'
+                                       max='35'
+                                       onInput={this.handleInput}/>
+                        </div>
                     </fieldset>
                 </form>
 
