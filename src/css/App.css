@@ -10,6 +10,8 @@
     left: 0;
     top: 0;
     background: rgba(255, 255, 255, 0.5);
+    color: var(--logo-color);
+    font-weight: 500;
 }
 .header__logo { margin-right: 5px; }
 
@@ -22,15 +24,31 @@
 .hero {
     padding-top: 50px;
     text-align: center;
-
-    @media (width < 900px) {
-        background: teal;
-    }
 }
-.hero__img { width: 40px; }
-.hero__title { margin-top: 0; }
+.hero__img {
+    width: 50px;
+    opacity: .5;
+}
+.hero__title {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1;
+}
 
 .intro {
     max-width: 500px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
+}
+
+.life-calc { margin-top: 25px; }
+.life-calc__form {
+    margin: 40px 0;
+}
+.life-calc__intro,
+.life-calc__results{
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+.life-calc__intro {
+    text-align: center;
 }
