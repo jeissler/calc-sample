@@ -10,10 +10,17 @@
     left: 0;
     top: 0;
     background: rgba(255, 255, 255, 0.5);
-    color: var(--logo-color);
+    color: var(--primary-color);
     font-weight: 500;
 }
-.header__logo { margin-right: 5px; }
+.header__logo {
+    margin-right: 5px;
+
+    & path:not(:first-child) {
+        fill: var(--primary-color);
+    }
+}
+.header__co { padding-top: 3px; }
 
 .footer {
     max-width: 1200px;
@@ -41,13 +48,34 @@
 
 .life-calc { margin-top: 25px; }
 .life-calc__form {
-    margin: 40px 0;
+    margin: 40px auto 20px;
 }
 .life-calc__intro,
-.life-calc__results{
+.life-calc__results {
     font-size: 1.25rem;
     font-weight: 100;
 }
 .life-calc__intro {
     text-align: center;
+}
+.life-calc__results {
+    border-top: 1px dashed var(--secondary-color);
+    padding-top: 20px;
+}
+
+/* simple grids */
+.life-calc {
+    @media (width >= 600px) {
+        & fieldset > div {
+            display: flex;
+        }
+
+        & fieldset label {
+            width: 50%;
+            margin: 0 10px;
+
+            &:first-child { margin-left: 0; }
+            &:last-child { margin-right: 0; }
+        }
+    }
 }
