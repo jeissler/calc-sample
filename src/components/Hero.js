@@ -1,4 +1,4 @@
-import img from "../img/chart.svg";
+import img from "../img/chart-wht.svg";
 import React from "react";
 
 const Hero = () => {
