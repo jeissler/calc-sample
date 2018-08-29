@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "normalize.css": "^8.0.0",
     "postcss-preset-env": "^5.3.0",
     "react": "^16.4.2",
     "react-app-rewire-postcss": "^1.0.2",

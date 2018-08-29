@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import LifeCalculator from "./components/LifeCalculator";
 import Footer from "./components/Footer";
+
 import "./css/App.css";
 
 class App extends Component {
