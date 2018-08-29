@@ -76,7 +76,7 @@ class LifeCalculator extends Component {
 
                 <form className="life-calc__form">
                     {/* age grid */}
-                    <legend className="life-calc__age">
+                    <fieldset className="life-calc__age">
                         <FormInput label='Current Age'
                                    name='age'
                                    type='number'
@@ -93,10 +93,10 @@ class LifeCalculator extends Component {
                                    max={retire_max}
                                    value={this.state.age_retire}
                                    onInput={this.handleInput}/>
-                    </legend>
+                    </fieldset>
 
 
-                    <legend className="life-calc__expenses">
+                    <fieldset className="life-calc__expenses">
                         <FormInput label='Monthly Rent/Mortgage'
                                    name='mo_home'
                                    type='number'
@@ -110,10 +110,10 @@ class LifeCalculator extends Component {
                                    onInput={this.handleInput}/>
 
                         {/* TODO: checkbox for own/rent + reveal payoff yrs */}
-                    </legend>
+                    </fieldset>
 
 
-                    <legend className="life-calc__savings">
+                    <fieldset className="life-calc__savings">
                         <FormInput label='Yearly Income'
                                    type='number'
                                    name='yr_income'
@@ -135,7 +135,7 @@ class LifeCalculator extends Component {
                                    min='0'
                                    max='35'
                                    onInput={this.handleInput}/>
-                    </legend>
+                    </fieldset>
                 </form>
 
                 <aside className="life-calc__results">

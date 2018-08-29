@@ -1,4 +1,7 @@
 /* basic block inputs */
+fieldset {
+    border: none;
+}
 label {
     display: block;
     margin-bottom: 20px;
