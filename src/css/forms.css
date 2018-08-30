@@ -117,11 +117,11 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* simple form validation style */
 .form-input__err {
-    color: var(--err-color);
+    color: var(--alert-color);
 }
 input.form-input__err {
-    background: var(--err-color);
-    border-color: var(--err-color);
+    background: var(--alert-color);
+    border-color: var(--alert-color);
 }
 .form-input__container {
     display: flex;

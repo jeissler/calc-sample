@@ -37,6 +37,11 @@ main {
     margin: 0 auto;
 }
 
+#root {
+    position: relative;
+    overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: var(--header-font-weight);
     line-height: var(--header-line-height);
@@ -44,3 +49,4 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @import "forms.css";
+@import "buttons.css";

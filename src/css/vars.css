@@ -7,9 +7,13 @@
     --body-background: url('../img/bg2.jpg') no-repeat 100% 0%;
     --body-gradient: linear-gradient(140deg, rgba(99, 54, 169, 0.5), rgba(59, 231, 228, 0.5)), linear-gradient(137deg, #4a238a, #6175b1);
     --primary-color: #583f9b;
-    --err-color: #ff7e7e;
+    --alert-color: #ff7e7e;
     --secondary-color: #499cbc;
 
     --header-line-height: 1;
     --header-font-weight: 500;
+
+    --btn-hover-color: var(--alert-color);
+    --btn-transition: all .2s ease-in-out;
+    --btn-arrow-size: 11px;
 }
