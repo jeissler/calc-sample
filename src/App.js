@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import LifeCalculator from "./components/LifeCalculator";
 import Footer from "./components/Footer";
+import Promo from "./components/Promo";
 
 import "./css/App.css";
 
@@ -22,6 +23,8 @@ class App extends Component {
                         <Route exact path="/" component={Intro}/>
                         <Route exact path="/calc" component={LifeCalculator}/>
                     </main>
+
+                    <Route path="/calc" component={Promo}/>
 
                     <Footer/>
 

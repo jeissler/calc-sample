@@ -75,6 +75,22 @@
     padding-top: 20px;
 }
 
+.promo {
+    margin: 65px 0 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, .25);
+    padding: 25px 10px;
+
+    & p { margin: 0; }
+    & hr {
+        margin: 15px auto;
+        border: none;
+        width: 50px;
+        background: var(--primary-color);
+        height: 1px;
+    }
+}
+
 /* simple grids */
 .life-calc {
     @media (width >= 600px) {
