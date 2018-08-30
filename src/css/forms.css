@@ -1,12 +1,11 @@
 /* basic block inputs */
 fieldset {
     border: none;
-    padding: 15px 0 !important;
+    padding: 15px 0;
 }
 label {
     display: block;
     margin-bottom: 20px;
-    overflow: hidden;
 }
 label > span {
     display: block;
@@ -28,9 +27,6 @@ input[type=text] {
     border: 2px solid white;
 }
 
-input[type=number] {
-    width: 105%;
-}
 
 /* range sliders - range.css*/
 input[type=range] {

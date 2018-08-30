@@ -1,17 +1,15 @@
-.header,
-.footer {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
 
 .header {
     position: absolute;
+    display: flex;
+    align-items: center;
     left: 0;
     top: 0;
     background: rgba(255, 255, 255, 0.5);
     color: var(--primary-color);
     font-weight: 500;
+    padding: 10px;
 }
 .header__logo {
     margin-right: 5px;
@@ -23,9 +21,18 @@
 .header__co { padding-top: 3px; }
 
 .footer {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 20px auto 0;
-    justify-content: flex-end;
+    padding: 10px;
+
+    & small { display: block; }
+}
+.footer__copyright {
+    text-align: right;
+    margin-bottom: 50px;
+}
+.footer__legal {
+    color: #d4d4d4;
 }
 
 .hero {
@@ -43,15 +50,20 @@
 
 .intro {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 35px auto 0;
+}
+.intro__btn {
+    margin: 50px auto 0;
+    display: block;
 }
 
 .life-calc { margin-top: 25px; }
 .life-calc__form {
     margin: 40px auto 20px;
 }
+.intro,
 .life-calc__intro,
-.life-calc__results {
+.life-calc__results :--headers {
     font-size: 1.25rem;
     font-weight: 100;
 }
@@ -77,5 +89,8 @@
             &:first-child { margin-left: 0; }
             &:last-child { margin-right: 0; }
         }
+
+        & .life-calc__form { margin: 50px auto; }
+        & .life-calc__results { padding-top: 40px; }
     }
 }

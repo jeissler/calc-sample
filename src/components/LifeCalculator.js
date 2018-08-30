@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import FormInput from "./FormInput";
 import Results from "./Results";
 
-import "../css/Forms.css"
-
 class LifeCalculator extends Component {
     constructor(props) {
         super(props);
