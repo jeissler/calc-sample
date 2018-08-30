@@ -18,7 +18,7 @@ class FormInput extends Component {
                     }
 
                     <input
-                        className={!is_valid && "form-input__err"}
+                        className={!is_valid ? "form-input__err" : undefined}
                         name={this.props.name}
                         type={this.props.type}
                         min={this.props.min}
