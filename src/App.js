@@ -12,23 +12,21 @@ import "./css/App.css";
 class App extends Component {
     render() {
         return (
-            <Fragment>
-                <Header/>
+            <Router>
+                <Fragment>
+                    <Header/>
 
-                <Hero/>
+                    <Hero/>
 
-                <main>
-                    <Router>
-                        <Fragment>
-                            <Route exact path="/" component={Intro}/>
-                            <Route exact path="/calc" component={LifeCalculator}/>
-                        </Fragment>
-                    </Router>
-                </main>
+                    <main>
+                        <Route exact path="/" component={Intro}/>
+                        <Route exact path="/calc" component={LifeCalculator}/>
+                    </main>
 
-                <Footer/>
+                    <Footer/>
 
-            </Fragment>
+                </Fragment>
+            </Router>
         );
     }
 }
