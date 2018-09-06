@@ -1,0 +1,57 @@
+button,
+[class*='__btn']:any-link {
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 300;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    transition: var(--btn-transition);
+    
+    &:hover {
+        background: var(--btn-hover-color);
+
+        &:before {
+            left: -50vw;
+            opacity: 1;
+        }
+        &:after {
+            left: 50vw;
+            opacity: 0;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        left: -150vw;
+        top: 0;
+        transform: rotate(45deg);
+        background: rgba(255, 255, 255, .25);
+        position: absolute;
+        z-index: -1;
+        transition: var(--btn-transition);
+        opacity: 0;
+    }
+
+    &:after {
+        border-style: solid;
+        border-width: 2px 2px 0 0;
+        content: '';
+        display: inline-block;
+        height: var(--btn-arrow-size);
+        width: var(--btn-arrow-size);
+        left: 5px;
+        position: relative;
+        top: -2px;
+        transform: rotate(45deg);
+        vertical-align: middle;
+        transition: var(--btn-transition);
+        opacity: .7;
+    }
+}

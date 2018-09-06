@@ -1,0 +1,15 @@
+{
+  "alias": "jeissler-react-calc",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "type": "static",
+  "static": {
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

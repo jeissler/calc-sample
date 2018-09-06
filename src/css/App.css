@@ -1,0 +1,112 @@
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+.header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 10px;
+}
+.header__logo {
+    margin-right: 5px;
+
+    & path:not(:first-child) {
+        fill: var(--primary-color);
+    }
+}
+.header__co { padding-top: 3px; }
+
+.footer {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding: 10px;
+
+    & small { display: block; }
+}
+.footer__copyright {
+    text-align: right;
+    margin-bottom: 50px;
+}
+.footer__legal {
+    color: #d4d4d4;
+}
+
+.hero {
+    padding-top: 50px;
+    text-align: center;
+}
+.hero__img {
+    width: 50px;
+    opacity: .5;
+}
+.hero__title {
+    margin: 0;
+    font-size: 40px;
+}
+
+.intro {
+    max-width: 500px;
+    margin: 35px auto 0;
+}
+.intro__btn {
+    margin: 50px auto 0;
+    display: block;
+}
+
+.life-calc { margin-top: 25px; }
+.life-calc__form {
+    margin: 40px auto 20px;
+}
+.intro,
+.life-calc__intro,
+.life-calc__results :--headers {
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+.life-calc__intro {
+    text-align: center;
+}
+.life-calc__results {
+    border-top: 1px dashed var(--secondary-color);
+    padding-top: 20px;
+}
+
+.promo {
+    margin: 65px 0 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, .25);
+    padding: 25px 10px;
+
+    & p { margin: 0; }
+    & hr {
+        margin: 15px auto;
+        border: none;
+        width: 50px;
+        background: var(--primary-color);
+        height: 1px;
+    }
+}
+
+/* simple grids */
+.life-calc {
+    @media (width >= 600px) {
+        & fieldset > div {
+            display: flex;
+        }
+
+        & fieldset label {
+            width: 50%;
+            margin: 0 10px;
+
+            &:first-child { margin-left: 0; }
+            &:last-child { margin-right: 0; }
+        }
+
+        & .life-calc__form { margin: 50px auto; }
+        & .life-calc__results { padding-top: 40px; }
+    }
+}

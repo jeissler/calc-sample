@@ -1,28 +1,35 @@
-import React, {Component} from 'react';
-import Header from './components/Header.js'
-import './App.css';
+import React, {Component, Fragment} from "react";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Intro from "./components/Intro";
+import LifeCalculator from "./components/LifeCalculator";
+import Footer from "./components/Footer";
+import Promo from "./components/Promo";
+
+import "./css/App.css";
 
 class App extends Component {
     render() {
-        const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-            month = months[new Date().getMonth() + 1] + '.';
-
         return (
-            <div className="frame-wrapper">
+            <Router>
+                <Fragment>
+                    <Header/>
 
-                <Header month={month}/>
+                    <Hero/>
 
-                <main>
-                    <p className="intro">
-                        We're just getting this started.
-                    </p>
-                </main>
+                    <main>
+                        <Route exact path="/" component={Intro}/>
+                        <Route exact path="/calc" component={LifeCalculator}/>
+                    </main>
 
-                <footer>
+                    <Route path="/calc" component={Promo}/>
 
-                </footer>
+                    <Footer/>
 
-            </div>
+                </Fragment>
+            </Router>
         );
     }
 }
