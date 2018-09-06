@@ -1,0 +1,11 @@
+# whitelist docker includes
+
+*
+!package.json
+!package-lock.json
+!src
+!public
+!.browserlistrc
+!config-overriders.js
+!now.json
+!postcss.config.js
