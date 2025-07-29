@@ -1,7 +1,6 @@
-import React from "react";
 import {Link} from "react-router-dom";
 
-const Intro = () => {
+export default function Intro() {
     return (
         <section className="intro">
             <p>
@@ -13,6 +12,4 @@ const Intro = () => {
             </Link>
         </section>
     )
-};
-
-export default Intro
+}

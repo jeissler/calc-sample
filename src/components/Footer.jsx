@@ -1,6 +1,4 @@
-import React from "react";
-import {Route} from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 
 const year = new Date().getFullYear();
 
@@ -10,14 +8,15 @@ const Legal = () => {
     return <small className="footer__legal">{disclaimer}</small>
 };
 
-const Footer = () => {
+export default function Footer() {
+    const location = useLocation();
+    const isCalcPage = location.pathname === '/calc';
+
     return (
         <footer className="footer">
             <small className="footer__copyright">&copy; good life. {year}</small>
 
-            <Route path="/calc" component={Legal}></Route>
+            {isCalcPage && <Legal />}
         </footer>
     )
-};
-
-export default Footer
+}
