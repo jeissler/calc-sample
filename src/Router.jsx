@@ -10,7 +10,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route
-          path="/calc"
+          path="/calculator"
           element={
             <>
               <LifeCalculator />

@@ -7,7 +7,7 @@ export default function Intro() {
                 Get an honest look at your financial future and find out how to make the most of your assets.
             </p>
 
-            <Link to="/calc" className="intro__btn">
+            <Link to="/calculator" className="intro__btn">
                 Find Out How
             </Link>
         </section>

@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 export default function Layout({ children }) {
   const location = useLocation();
-  const isCalcPage = location.pathname === '/calc';
+  const isCalcPage = location.pathname === '/calculator';
 
   return (
     <div>
