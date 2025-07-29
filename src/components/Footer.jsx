@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 const year = new Date().getFullYear();
 
 const Legal = () => {
@@ -8,15 +6,12 @@ const Legal = () => {
     return <small className="footer__legal">{disclaimer}</small>
 };
 
-export default function Footer() {
-    const location = useLocation();
-    const isCalcPage = location.pathname === '/calc';
-
+export default function Footer({ showLegal = false }) {
     return (
         <footer className="footer">
             <small className="footer__copyright">&copy; good life. {year}</small>
 
-            {isCalcPage && <Legal />}
+            {showLegal && <Legal />}
         </footer>
     )
 }
