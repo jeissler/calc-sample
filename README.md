@@ -1,6 +1,8 @@
 # 🧮 React Retirement Calculator
 
-An interactive retirement savings calculator built as a sample project using React. Migrated from version v16 to v19 and updated to use the latest React ecosystem and modern build tooling.
+An interactive retirement savings calculator built as a sample project using React. Migrated from version 16 to 19 and updated to use the latest React ecosystem and modern build tooling.
+
+#### 🚀 [Live Preview](https://react-retirement-calculator.netlify.app)
 
 ## 🔧 Tech Stack
 
