@@ -13,6 +13,8 @@
 }
 .header__logo {
     margin-right: 5px;
+    width: 24px;
+    height: 24px;
 
     & path:not(:first-child) {
         fill: var(--primary-color);
